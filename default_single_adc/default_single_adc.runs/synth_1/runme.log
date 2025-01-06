@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+    with args -log interface_main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source interface_main.tcl
 
 
 
@@ -8,15 +8,15 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Jan  2 12:17:17 2025
+  **** Start of session at: Mon Jan  6 01:42:52 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source main.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental {K:/Vivado Projects/default_single_adc/default_single_adc.srcs/utils_1/imports/synth_1/main.dcp}
-INFO: [Vivado 12-5825] Read reference checkpoint from K:/Vivado Projects/default_single_adc/default_single_adc.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
+source interface_main.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental {K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/utils_1/imports/synth_1/main.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top main -part xc7s50csga324-1
+Command: synth_design -top interface_main -part xc7s50csga324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
@@ -25,31 +25,32 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 5924
+INFO: [Synth 8-7075] Helper process launched with PID 15216
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1052.102 ; gain = 467.289
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1051.508 ; gain = 468.180
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'main' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/main.vhd:22]
-INFO: [Synth 8-3491] module 'interface_main' declared at 'K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:4' bound to instance 'interface_main_inst' of component 'interface_main' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/main.vhd:41]
-INFO: [Synth 8-638] synthesizing module 'interface_main' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:19]
-INFO: [Synth 8-3491] module 'clk_div' declared at 'K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd:4' bound to instance 'clk_div_inst' of component 'clk_div' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:61]
-INFO: [Synth 8-638] synthesizing module 'clk_div' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd:10]
-INFO: [Synth 8-256] done synthesizing module 'clk_div' (0#1) [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd:10]
-INFO: [Synth 8-3491] module 'pmod_dac121S101' declared at 'K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:26' bound to instance 'pmod_dac121S101_inst' of component 'pmod_dac121S101' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:67]
-INFO: [Synth 8-638] synthesizing module 'pmod_dac121S101' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'interface_main' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:17]
+INFO: [Synth 8-3491] module 'clk_div' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd:4' bound to instance 'clk_div_inst' of component 'clk_div' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'clk_div' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'clk_div' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd:10]
+INFO: [Synth 8-3491] module 'processing_main' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/processing_main.vhd:5' bound to instance 'processing_main_inst' of component 'processing_main' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'processing_main' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/processing_main.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'processing_main' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/processing_main.vhd:15]
+INFO: [Synth 8-3491] module 'pmod_dac121S101' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:26' bound to instance 'pmod_dac121S101_inst' of component 'pmod_dac121S101' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'pmod_dac121S101' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:43]
 	Parameter slaves bound to: 1 - type: integer 
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'spi_master_dual_mosi' declared at 'K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd:28' bound to instance 'spi_master_dual_mosi_0' of component 'spi_master_dual_mosi' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:80]
-INFO: [Synth 8-638] synthesizing module 'spi_master_dual_mosi' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd:52]
+INFO: [Synth 8-3491] module 'spi_master_dual_mosi' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd:28' bound to instance 'spi_master_dual_mosi_0' of component 'spi_master_dual_mosi' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'spi_master_dual_mosi' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd:52]
 	Parameter slaves bound to: 1 - type: integer 
 	Parameter d_width bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'spi_master_dual_mosi' (0#1) [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd:52]
-INFO: [Synth 8-226] default block is never used [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:101]
-INFO: [Synth 8-256] done synthesizing module 'pmod_dac121S101' (0#1) [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:43]
-INFO: [Synth 8-3491] module 'xadc_controller' declared at 'K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:4' bound to instance 'xadc_controller_inst' of component 'xadc_controller' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'xadc_controller' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:17]
-INFO: [Synth 8-3491] module 'xadc_wiz_0' declared at 'k:/Vivado Projects/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:55' bound to instance 'xadc_wiz_0_inst' of component 'xadc_wiz_0' [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:51]
-INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [k:/Vivado Projects/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:78]
+INFO: [Synth 8-256] done synthesizing module 'spi_master_dual_mosi' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd:52]
+INFO: [Synth 8-226] default block is never used [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:101]
+INFO: [Synth 8-256] done synthesizing module 'pmod_dac121S101' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd:43]
+INFO: [Synth 8-3491] module 'xadc_controller' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:4' bound to instance 'xadc_controller_inst' of component 'xadc_controller' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'xadc_controller' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:19]
+INFO: [Synth 8-3491] module 'xadc_wiz_0' declared at 'k:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:55' bound to instance 'xadc_wiz_0_inst' of component 'xadc_wiz_0' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [k:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:78]
 	Parameter INIT_40 bound to: 16'b0000000000010000 
 	Parameter INIT_41 bound to: 16'b0011000110101111 
 	Parameter INIT_42 bound to: 16'b0000010000000000 
@@ -73,65 +74,85 @@ INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [k:/Vivado Projects/default
 	Parameter INIT_5C bound to: 16'b0101000100010001 
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
 	Parameter SIM_MONITOR_FILE bound to: design.txt - type: string 
-INFO: [Synth 8-113] binding component instance 'U0' to cell 'XADC' [k:/Vivado Projects/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:145]
-INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (0#1) [k:/Vivado Projects/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:78]
-INFO: [Synth 8-256] done synthesizing module 'xadc_controller' (0#1) [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'interface_main' (0#1) [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'main' (0#1) [K:/Vivado Projects/default_single_adc/default_single_adc.srcs/sources_1/new/main.vhd:22]
+INFO: [Synth 8-113] binding component instance 'U0' to cell 'XADC' [k:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:145]
+INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (0#1) [k:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd:78]
+INFO: [Synth 8-256] done synthesizing module 'xadc_controller' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd:19]
+INFO: [Synth 8-3491] module 'ffd_vector' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:5' bound to instance 'input_buffer' of component 'ffd_vector' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'ffd_vector' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:16]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'ffd' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:16]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-3491] module 'ffd' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd.vhd:5' bound to instance 'FFi' of component 'ffd' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'ffd_vector' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:16]
+INFO: [Synth 8-3491] module 'ffd_vector' declared at 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd:5' bound to instance 'output_buffer' of component 'ffd_vector' [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:137]
+INFO: [Synth 8-256] done synthesizing module 'interface_main' (0#1) [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/sources_1/new/interface/interface_main.vhd:17]
+WARNING: [Synth 8-7129] Port clk in module processing_main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module processing_main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port enable in module processing_main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.074 ; gain = 576.262
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1160.805 ; gain = 577.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.074 ; gain = 576.262
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1160.805 ; gain = 577.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.074 ; gain = 576.262
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1160.805 ; gain = 577.477
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1161.074 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1160.805 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [k:/Vivado Projects/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'interface_main_inst/xadc_controller_inst/xadc_wiz_0_inst/U0'
-Finished Parsing XDC File [k:/Vivado Projects/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'interface_main_inst/xadc_controller_inst/xadc_wiz_0_inst/U0'
-Parsing XDC File [K:/Vivado Projects/default_single_adc/Arty-S7-50-Master.xdc]
-Finished Parsing XDC File [K:/Vivado Projects/default_single_adc/Arty-S7-50-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [K:/Vivado Projects/default_single_adc/Arty-S7-50-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [k:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'xadc_controller_inst/xadc_wiz_0_inst/U0'
+Finished Parsing XDC File [k:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'xadc_controller_inst/xadc_wiz_0_inst/U0'
+Parsing XDC File [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/constrs_1/imports/default_single_adc/Arty-S7-50-Master.xdc]
+Finished Parsing XDC File [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/constrs_1/imports/default_single_adc/Arty-S7-50-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.srcs/constrs_1/imports/default_single_adc/Arty-S7-50-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/interface_main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/interface_main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/interface_main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/interface_main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1252.266 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1248.840 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1252.266 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1248.840 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1252.266 ; gain = 667.453
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1248.840 ; gain = 665.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1252.266 ; gain = 667.453
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1248.840 ; gain = 665.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for interface_main_inst/xadc_controller_inst/xadc_wiz_0_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for xadc_controller_inst/xadc_wiz_0_inst. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1252.266 ; gain = 667.453
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1248.840 ; gain = 665.512
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_dac121S101'
 ---------------------------------------------------------------------------------------------------
@@ -144,7 +165,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'pmod_dac121S101'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1252.266 ; gain = 667.453
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1248.840 ; gain = 665.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -162,7 +183,7 @@ Detailed RTL Component Info :
 	               14 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
-	                1 Bit    Registers := 9     
+	                1 Bit    Registers := 33    
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 3     
 	   2 Input   16 Bit        Muxes := 4     
@@ -190,25 +211,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.266 ; gain = 667.453
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1248.840 ; gain = 665.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1356.355 ; gain = 771.543
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1356.848 ; gain = 773.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1390.535 ; gain = 805.723
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1390.586 ; gain = 807.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1391.164 ; gain = 806.352
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1391.273 ; gain = 807.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -226,37 +247,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -274,43 +295,41 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    15|
-|3     |LUT1   |     3|
-|4     |LUT2   |    38|
-|5     |LUT3   |    29|
-|6     |LUT4   |     8|
-|7     |LUT5   |     9|
-|8     |LUT6   |    13|
+|3     |LUT1   |     2|
+|4     |LUT2   |    36|
+|5     |LUT3   |    28|
+|6     |LUT4   |     6|
+|7     |LUT5   |     6|
+|8     |LUT6   |    10|
 |9     |XADC   |     1|
-|10    |FDRE   |    99|
-|11    |FDSE   |     1|
+|10    |FDCE   |    24|
+|11    |FDRE   |    92|
 |12    |IBUF   |     4|
 |13    |OBUF   |     2|
 |14    |OBUFT  |     2|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 1587.090 ; gain = 911.086
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1587.090 ; gain = 1002.277
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1587.070 ; gain = 915.707
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1587.070 ; gain = 1003.742
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1587.090 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1587.070 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-140] Inserted 2 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1599.965 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1587.070 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 3e443ecc
+Synth Design complete | Checksum: 2e8af9cd
 INFO: [Common 17-83] Releasing license: Synthesis
-49 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+66 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1599.965 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1/main.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan  2 12:17:56 2025...
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1587.070 ; gain = 1176.211
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1587.070 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1/interface_main.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file interface_main_utilization_synth.rpt -pb interface_main_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jan  6 01:43:33 2025...

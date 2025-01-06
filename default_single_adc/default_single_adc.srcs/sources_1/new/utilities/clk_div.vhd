@@ -13,7 +13,7 @@ begin
 		variable cnt : integer range 1 to 200; --freq
 	begin
 		if rising_edge(clk) then
-			if cnt = 10 then
+			if cnt = 5 then
 				cnt := 1;
 			else
 			cnt := cnt + 1;
@@ -27,3 +27,4 @@ begin
 		end if;	
 	end process;
 end Behavior;
+

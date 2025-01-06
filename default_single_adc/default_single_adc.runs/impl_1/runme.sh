@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='K:/Vivado Projects/default_single_adc/default_single_adc.runs/impl_1'
+HD_PWD='K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,7 +42,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log main.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+/bin/touch .write_bitstream.begin.rst
+EAStep vivado -log interface_main.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source interface_main.tcl -notrace
 
 

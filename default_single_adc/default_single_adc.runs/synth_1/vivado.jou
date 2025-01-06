@@ -3,12 +3,12 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Jan  2 12:17:17 2025
-# Process ID         : 11160
-# Current directory  : K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1
-# Command line       : vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
-# Log file           : K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1/main.vds
-# Journal file       : K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1\vivado.jou
+# Start of session at: Mon Jan  6 01:42:52 2025
+# Process ID         : 16928
+# Current directory  : K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1
+# Command line       : vivado.exe -log interface_main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source interface_main.tcl
+# Log file           : K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1/interface_main.vds
+# Journal file       : K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1\vivado.jou
 # Running On         : DESKTOP-QCIC9EP
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 19045
@@ -17,8 +17,8 @@
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 17107 MB
-# Swap memory        : 3221 MB
-# Total Virtual      : 20329 MB
-# Available Virtual  : 5514 MB
+# Swap memory        : 5831 MB
+# Total Virtual      : 22939 MB
+# Available Virtual  : 4911 MB
 #-----------------------------------------------------------
-source main.tcl -notrace
+source interface_main.tcl -notrace

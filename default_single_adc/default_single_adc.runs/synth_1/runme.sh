@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='K:/Vivado Projects/default_single_adc/default_single_adc.runs/synth_1'
+HD_PWD='K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+EAStep vivado -log interface_main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source interface_main.tcl

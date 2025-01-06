@@ -9,7 +9,9 @@ port (
     vn_in     : in std_logic;
     vauxp0    : in std_logic;
     vauxn0    : in std_logic;
-    data      : out std_logic_vector(15 downto 0)
+
+    data      : out std_logic_vector(15 downto 0);
+    data_ready: out std_logic
 
 );
 end xadc_controller;
@@ -17,11 +19,7 @@ end xadc_controller;
 architecture Behavioral of xadc_controller is
 
 -- aux signals
-   -- signal enable         : std_logic;
-   -- signal ready          : std_logic;
-   -- signal ready_d1       : std_logic := '0';
-   -- signal ready_rising   : std_logic;
-   -- signal ready_falling  : std_logic;
+signal enable_xadc_signal     :   std_logic;
 
 component xadc_wiz_0 is
     port
@@ -52,18 +50,18 @@ xadc_wiz_0_inst: xadc_wiz_0
 
  port map(
     daddr_in => "0010000", -- A0 channel
-    den_in => '1',
+    den_in => enable_xadc_signal,
     di_in => (others =>'0'),
     dwe_in => '0',
     do_out => data,
-    drdy_out => open,
+    drdy_out => data_ready,
     dclk_in => clk,
     reset_in => rst,
     vauxp0 => vauxp0,
     vauxn0 => vauxn0,
     busy_out => open,
     channel_out => open,
-    eoc_out => open,
+    eoc_out => enable_xadc_signal,
     eos_out => open,
     alarm_out => open,
     vp_in => vp_in,

@@ -64,8 +64,9 @@ xadc_wiz_0_inst: xadc_wiz_0
     eoc_out => enable_xadc_signal,
     eos_out => open,
     alarm_out => open,
-    vp_in => vp_in,
+    vp_in => vp_in, -- sss
     vn_in => vn_in
 );
+
 
  end architecture;

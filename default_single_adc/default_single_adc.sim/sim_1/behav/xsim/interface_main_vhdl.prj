@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../default_single_adc.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/utilities/clk_div.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/utilities/ffd.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/utilities/ffd_vector.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/interface/dac/pmod_dac121S101.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/processing_main.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/interface/dac/spi_master_dual_mosi.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/interface/adc/xadc_controller.vhd" \
+"../../../../default_single_adc.srcs/sources_1/new/interface/interface_main.vhd" \
+
+# Do not sort compile order
+nosort

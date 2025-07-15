@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/impl_1/interface_main.tcl"
+  variable script "K:/Vivado_Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/impl_1/interface_main.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,8 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -108,20 +106,17 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 3
-  set_param synth.incrementalSynthesisCache C:/Users/marco/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20084-DESKTOP-QCIC9EP/incrSyn
-  set_param checkpoint.writeSynthRtdsInDcp 1
-  set_param xicom.use_bs_reader 1
   set_param simulator.questaInstallPath X:/questasim64_2024.1/win64
   set_param runs.launchOptions { -jobs 6  }
   open_checkpoint interface_main_routed.dcp
-  set_property webtalk.parent_dir {K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.cache/wt} [current_project]
+  set_property webtalk.parent_dir K:/Vivado_Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.cache/wt [current_project]
 set_property TOP interface_main [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
   catch { write_mem_info -force -no_partial_mmi interface_main.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
-  write_bitstream -force interface_main.bit 
+  write_bitstream -force interface_main.bit -bin_file
 OPTRACE "write_bitstream" END { }
 OPTRACE "write_bitstream misc" START { }
 OPTRACE "read constraints: write_bitstream_post" START { }

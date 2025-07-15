@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='K:/Vivado Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/impl_1'
+HD_PWD='K:/Vivado_Projects/spartan7_xadc_pmod_da2/default_single_adc/default_single_adc.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
